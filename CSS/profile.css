@@ -1,0 +1,269 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    margin: 0;
+    padding-top: 80px;
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #fff;
+}
+
+#logout-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logout-button:hover {
+    background-color: #c9302c;
+}
+
+/* Profile Info */
+.profile-info {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.profile-info h2 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.profile-pic-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+#change-pic-button {
+    background-color: #0275d8;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#change-pic-button:hover {
+    background-color: #025aa5;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Profile Details */
+.profile-details {
+    margin-bottom: 20px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.profile-details strong {
+    color: #e0e0e0;
+}
+
+#edit-profile-button {
+    background-color: #5bc0de;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-profile-button:hover {
+    background-color: #31b0d5;
+}
+
+/* Edit Profile Form */
+#edit-profile-form {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#edit-profile-form h2 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#edit-profile-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#edit-profile-form input {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+#edit-profile-form button {
+    background-color: #5bc0de;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#edit-profile-form button:hover {
+    background-color: #31b0d5;
+}
+
+#cancel-changes {
+    background-color: #f0ad4e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#cancel-changes:hover {
+    background-color: #ec971f;
+}
+
+
+#cropper-modal.hidden {
+    display: none;
+}
+
+
+/* Cropper Modal */
+#cropper-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Cropper Container */
+.cropper-container {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 500px; /* Clean fixed width */
+    max-height: 80vh; /* Prevents overflow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Styling */
+#image-to-crop {
+    width: 100%;
+    max-width: 100%;
+    max-height: 50vh; /* Keeps space for buttons */
+    object-fit: contain;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+
+/* Cropper Buttons */
+.cropper-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Buttons */
+#save-cropped-image,
+#cancel-crop {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#save-cropped-image:hover {
+    background-color: #0277bd;
+}
+
+#cancel-crop {
+    background-color: #d32f2f;
+}
+
+#cancel-crop:hover {
+    background-color: #b71c1c;
+}
+
+/* Back to Home Button */
+#back-to-home {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    cursor: pointer;
+}
+
+#back-to-home img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+#back-to-home:hover img {
+    width: 25px;
+    opacity: 0.8;
+    transform: scale(1.2);
+}

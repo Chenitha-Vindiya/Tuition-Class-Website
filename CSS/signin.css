@@ -1,0 +1,328 @@
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container .form-box input:-webkit-autofill {
+    background-color: transparent !important;
+    /* Keeps background unchanged */
+    -webkit-box-shadow: 0 0 0px 1000px #444 inset !important;
+    /* Set to desired color */
+    color: #fff !important;
+    /* Adjust text color if needed */
+    border-radius: 5px !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
+    border: none !important;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+
+/* body {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/My/IMAGE/signin-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+    z-index: -1;
+} */
+
+.container {
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    background: radial-gradient(circle at center, #0A2A6F33, #0A2A6F99);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 7px 7px 20px #000, -7px -7px 20px #fff;
+    backdrop-filter: blur(10px);
+    vertical-align: middle;
+    opacity: 0;
+    transform: translate(0%, 0%);
+    transition: transform 1.5s ease, opacity 1s ease;
+    /* prevent clicks while hidden */
+    pointer-events: none;
+}
+
+.form-active {
+    opacity: 1;
+    transform: translate(80%, 0%);
+    /* allow clicks once visible */
+    pointer-events: auto;
+}
+
+.form-box h2 {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none !important;
+    border-radius: 5px;
+    background: #444;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    /* Prevents input fields from exceeding the container */
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+#confirm-password {
+    margin-bottom: 20px;
+    /* Adjust this value as needed */
+}
+
+
+/* Hide additional fields initially */
+.hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show additional fields when in Sign Up mode */
+.show-fields {
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#auth-button {
+    font-size: 18px;
+    width: 90%;
+    padding: 10px;
+    background: #0A2A4A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#auth-button:hover {
+    background: #0A2A6F;
+}
+
+#toggle-text {
+    margin-top: 10px;
+}
+
+a {
+    color: #1964d3;
+    cursor: pointer;
+}
+
+/* Back to Home Button */
+#back-to-home {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+}
+
+#back-to-home img {
+    width: 30px;
+    /* Adjust width as needed */
+    height: 30px;
+    /* Adjust height as needed */
+}
+
+/* Optional: Hover effect */
+#back-to-home:hover img {
+    opacity: 0.7;
+    /* Slightly fade the image on hover */
+}
+
+/* Flexbox for name fields to display them side by side */
+.name-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%a;
+}
+
+.name-container input {
+    width: 100%;
+    /* Ensure both fields take equal space */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #444;
+    box-sizing: border-box;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+}
+
+.name-container input:first-child {
+    margin-left: 26px;
+    width: 50%;
+    /* First Name */
+}
+
+.name-container input:last-child {
+    margin-right: 26px;
+    width: 50%;
+    /* Last Name */
+}
+
+.password-container {
+    position: relative;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    /* Space for the button */
+    border: none;
+    border-radius: 5px;
+    background: #444;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    cursor: pointer;
+    width: 5px;
+}
+
+.toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password .visibility-icon {
+    width: 20px;
+    /* Adjust width as needed */
+    height: 20px;
+    /* Adjust height as needed */
+    object-fit: contain;
+    filter: brightness(80%);
+}
+
+/* Specific adjustments for Confirm Password eye icon */
+#confirm-password-container .toggle-password {
+    position: absolute;
+    padding-bottom: 13px;
+
+}
+
+.password-requirements {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #888;
+}
+
+.requirement {
+    color: #888;
+    margin-bottom: 5px;
+    transition: color 0.5s;
+}
+
+.requirement.valid {
+    color: green;
+}
+
+.requirement:not(.valid) {
+    color: red;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px;
+    /* Space for the eye icon */
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.password-container .visibility-icon {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+.password-requirements {
+    display: none;
+    /* Hide by default */
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.password-requirements p {
+    margin: 5px 0;
+}
+
+.password-requirements p.valid {
+    color: green;
+}
+
+.password-requirements p.invalid {
+    color: red;
+}

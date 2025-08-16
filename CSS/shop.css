@@ -1,0 +1,94 @@
+/*Store.php*/
+
+.items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shoe-details {
+    margin: 15px;
+    padding: 10px;
+    background: rgba(148, 154, 158, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.shoe-image img {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.star-img{
+    font-size: 25px;
+}
+
+.rate-amount {
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.shoe-info {
+    padding-top: 10px;
+    display: grid;
+    grid-row-gap: 10px;
+    max-width: 200px;
+}
+
+.shoe-info h2 {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.shoe-info .rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+}
+
+.price {
+    font-size: 20px;
+    color: #ff4500;
+    font-weight: bold;
+}
+
+/* .description {
+    font-size: 18px;
+    color: #ddd;
+    margin: 10px 0;
+} */
+
+.shoe-info button {
+    padding: 10px 15px;
+    background: #ff4500;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.shoe-info button:hover {
+    background: #e03e00;
+}
+
+.shoe-image .other-pics {
+    position: absolute;
+    translate: -100%;
+}
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+    }
+    .hero-image img {
+        max-width: 100%;
+    }
+}
+

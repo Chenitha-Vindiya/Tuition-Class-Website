@@ -1,0 +1,107 @@
+/* Mega Dropdown */
+.mega-dropdown {
+    position: absolute;
+    top: 65px;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+    min-width: 300px;  /* Minimum width */
+    max-width: 1000px; /* Maximum width */
+    width: auto; /* Adjust width automatically */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevent interaction when hidden */
+    transition: opacity 0.4s ease, visibility 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Allow interaction */
+}
+
+
+/* Dropdown Sections */
+.dropdown-section {
+    padding: 10px;
+}
+
+.dropdown-section h3 {
+    color: #ff9800;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.dropdown-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-section ul li {
+    margin: 5px 0;
+}
+
+.dropdown-section ul li a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dropdown-section ul li a:hover {
+    color: #ff9800;
+}
+
+/* Featured Collections
+.dropdown-featured {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.featured-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.featured {
+    text-align: center;
+}
+
+.featured img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.featured img:hover {
+    transform: scale(1.1);
+}
+
+.featured a {
+    display: block;
+    color: #ff9800;
+    text-decoration: none;
+    margin-top: 5px;
+    font-size: 14px;
+} */
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mega-dropdown {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
